@@ -13,14 +13,14 @@ on:
          - 'true'
          - 'false'
 
-    destroy:
-      description: 'Destruir a infraestrutura?'
-      required: true
-      default: 'false'
-      type: choice
-      options:
-       - 'true'
-       - 'false'
+      destroy:
+        description: 'Destruir a infraestrutura?'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+         - 'true'
+         - 'false'
 permissions:
    id-token: write
    contents: read
@@ -61,7 +61,7 @@ jobs:
 
       - name: Plan destroy
         run: terraform plan -destroy -out=tfplan.tfout
-        if: github.event.inputs.plan_destroy == 'true'
+        if: github.event.inputs.destroy == 'true'
 
       - name: Terraform destroy
         run: terraform apply -destroy -auto-approve tfplan.tfout
