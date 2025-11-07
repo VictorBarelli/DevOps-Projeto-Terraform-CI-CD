@@ -30,7 +30,7 @@ jobs:
       - name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v4.3.1
         with:
-          role-to-assume: ${{ arn:aws:iam::355334485510:role/GitHubInfraRole }}
+          role-to-assume: arn:aws:iam::355334485510:role/GitHubInfraRole
           aws-region: us-east-2
 
 
