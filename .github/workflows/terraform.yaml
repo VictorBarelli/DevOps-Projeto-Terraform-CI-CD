@@ -12,8 +12,17 @@ on:
         options:
          - 'true'
          - 'false'
-
       destroy:
+        description: 'executar o terraform destroy'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+         - 'true'
+         - 'false'
+
+
+      plan_destroy:
         description: 'Destruir a infraestrutura?'
         required: true
         default: 'false'
@@ -24,6 +33,7 @@ on:
 permissions:
    id-token: write
    contents: read
+
 
 
 
